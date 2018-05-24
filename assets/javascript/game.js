@@ -39,14 +39,37 @@ $(document).ready(function() {
         pickaword[i] = "_ ";
     }
 
+ // does this function make sense?  I'm not sure!  No one knows~
+    
+
+
+
     // ~:~:~:~
     
     // Here are the functions as they are called.  Make It So.
+
+// NOTE: THIS ONE WORKS -------------- NOTE: THIS ONE WORKS 
+    $("#elfbutton").on("click", function() {
+        $("#elfinfo").show();
+        $("#meninfo").hide();
+        $("#ardainfo").hide();
+      });
+  // NOTE: THIS ONE WORKS -------------- NOTE: THIS ONE WORKS 
+    // add bit here with choosing the elfarray
+    function chooseElfWord()
+    console.log(result)
+
+
+    // Here are some notes:
 
     if
     elseif
     else
 
+
+    while (something like x <10) {
+        x++;
+    }
 
     wins++;
     losses++;
