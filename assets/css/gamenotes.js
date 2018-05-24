@@ -1,10 +1,3 @@
-//  ----------------------------
-//  ----------------------------
-//  ----------------------------
-//  ------- THIS IS WHERE I'M PUTTING JS/JQ THAT I'M SURE WORKS (and not all notes because that's too many notes)
-//  ----------------------------
-//  ----------------------------
-//  ----------------------------
 $(document).ready(function() {
 
     // Here are the arrays of names.  NOTE: All lowercase so as to lessen confusion.
@@ -18,7 +11,7 @@ $(document).ready(function() {
 
     var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-    var pickaword = 0;//something here;
+    var pickaword = //something here;
 
     var wins = 0;
     var losses = 0;
@@ -64,10 +57,9 @@ $(document).ready(function() {
       });
   // NOTE: THIS ONE WORKS -------------- NOTE: THIS ONE WORKS 
     // add bit here with choosing the elfarray
-    
-    function chooseElfWord() {
-        console.log(result)
-    }
+    function chooseElfWord()
+    console.log(result)
+
 
 
     // Here are some notes:
@@ -105,3 +97,35 @@ $(document).ready(function() {
 
 
 
+//-----------------------------------------------        
+    // I'm keeping this stuff below just to test that my code works
+//
+//
+//
+    var pbjnum = 0;
+    var gcnum = 0;
+    var rbnum = 0;
+
+    $("#pbj").on("click", function() {
+      alert("Ate one more pbj!");
+      pbjnum++;
+      $("#pbj").append ("you ate " + pbjnum + " pbjs!");
+      console.log(pbjnum);
+    });
+
+    $("#grilledcheese").on("click", function() {
+      alert("Ate one more grillcheese!");
+      gcnum++;
+      $(document.body.append ("you ate " + gcnum + " grillcheeses!"));
+      console.log(gcnum);
+    });
+
+    $("#roastbeef").on("click", function() {
+      alert("Ate one more beef!");
+      rbnum++;
+      $(document.body.append ("you ate " + rbnum + " beefs!"));
+      console.log(rbnum);
+    });
+
+  });
+    // -----------------------------------------------------------
