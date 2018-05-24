@@ -11,21 +11,32 @@
   <script type="text/javascript" src="game.js"></script>
 </head>
 
-<body>
-
+<body style="background-image: url(assets/images/feathers.png)">
 
     <h1>FILLER TEXT AND FUNCTIONS FROM SANDWICH GAME</h1>
     <h3 id="pbj">Peanut Butter Jelly</h3>
     <h3 id="grilledcheese">Grilled Cheese</h3>
     <h3 id="roastbeef">Roast Beef</h3>
   
-  
-    <button type="button" id="elfbutton">Elves</button>
-    <button type="button" id="menbutton">Men</button>
-    <button type="button" id="ardabutton">Arda</button>
+
+<div id="tolkienbox">
+    <center><h1>TOLKIEN WORD GUESS GAME</h1></center>
+
+    <img src="assets/images/hobbitart.png" id="art" />
+
+    <center>
+        <button type="button" id="elfbutton">Elves</button> &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" id="menbutton">Men</button> &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" id="ardabutton">Arda</button>
+    </center>
 
     <br/>
     <br/>
+
+
+    <div id="numberofguesses">
+        Guesses Left:
+    </div>
 
     <div id="winsdiv">
         Wins:
@@ -33,6 +44,9 @@
     <div id="lossesdiv">
         Losses:
     </div>
+
+</div>
+
 </body>
 
 </html>
