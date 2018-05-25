@@ -24,15 +24,92 @@
         <h1>My Psychic Game</h1>
 
         <div>
-            <h2>Wins:</h2><div id="wins"></div>
-            <h2>Losses:</h2><div id="losses"></div>
+            <h2>Wins:</h2><div id="winsgame"></div>
+            <h2>Losses:</h2><div id="lossesgame"></div>
             <h2>Guesses Left:</h2><div id="guessesleft"></div>
             <h2>All Guesses:</h2><div id="myguesses"></div>
         </div>
 
         <script type="text/javascript">
-        
+        var alphabets = ["a","b","c","d","e","f"];
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 9;
+        var myguesses = 0;
+
+            document.onkeypress = function(event) { // this is to make sure it picks up the key that is being pressed
+// comp randomly picks a letter
+                var computerGuess = alphabets[Math.floor(Math.random()* alphabets.length)];
+                var userGuess = event.key;
+
+// if user picks right letter
+// win column goes up
+
+                //displaying the guessses in the form of a, e, j...
+                myguesses = myguesses + "," + event.key;
+                // to stop user from reguessing same letter, create an array and push them into the array, then czech array for letter before OKing it
+
+                if(userGuess == computerGuess)
+                {  // this is basically setting a reset if you win
+                    wins = wins +1;
+                    guessesLeft = 9
+                    myguesses = "";
+                }
+                else 
+                {
+                    guessesLeft = guessesLeft - 1;   //  this is what happens if you wrong  
+                }
+
+                if(guessesLeft == 0)
+                {
+                    alert('You Lost! You are not a psychic!')
+                    losses = losses +1;
+                    //resets
+                    guessesLeft = 9
+                    myguesses = "";
+                }
+
+
+                var wins = document.getElementById("winsgame");
+                winsgame.innerHTML = wins;
+
+                var losses = document.getElementById("lossesgame");
+                lossesgame.innerHTML = wins;
+
+
+
+                var numberofguesses = document.getElementById("guessesLeft");
+                numberofguesses.innerHTML = guessesLeft;
+
+
+                var showGuesses = document.getElementById("myguesses");
+                showGuesses.innerHTML = myguesses;
+                    // gebID points to the div tag that's myguesses
+
+
+
+
+
+
+
+
+
+            }   
+
+
+
+
+
         </script>
 
     </body>
 </html>
+
+
+
+
+
+
+
+
+

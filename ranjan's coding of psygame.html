@@ -1,0 +1,68 @@
+//User picks a letter
+//user keeps track of wins, losses, guesses, showing all the guesses
+//conditions
+//if user picks the wrong letter
+//number of guesses goes down by 1
+//if the number of guesses are equal to 0
+//loss column goes up
+//reset the game
+<!Doctype html>
+<html>
+<head>
+<title>Psychic Game</title>
+</head>
+<body>
+<h1>My Psychic Game</h1>
+<div>
+  <h2>Wins:</h2>  <div id="winsGame"></div>
+  <h2>Losses:</h2>  <div id="lossesGame"></div>
+  <h2>Guesses Left:</h2>  <div id="guessesleft"></div>
+  <h2>All Guesses:</h2>  <div id="myguesses"></div>
+</div>
+<script type="text/javascript">
+var alphabets = ["a", "b", "c", "d", "e", "f"];
+var wins = 0;
+var losses = 0;
+var guessesLeft = 9;
+var myguesses = "";
+document.onkeypress = function(event)
+{
+   //computer randomly picks a letter
+     var computerGuess = alphabets[Math.floor(Math.random() * alphabets.length)];
+     var userGuess = event.key;
+//if user picks the correct letter
+//win column goes up
+        //displaying the guesses in the form a, e, j, 
+        myguesses = myguesses + "," + event.key;
+    if(userGuess == computerGuess)
+    {
+        wins = wins + 1; 
+        //resets
+        guessesLeft = 9;
+        myguesses  = "";
+    }
+    else
+    {
+        guessesLeft = guessesLeft - 1;
+    }
+    if(guessesLeft == 0)
+    {
+        alert('You Lost! You are not a psychic!');
+        losses = losses + 1;
+        //resets
+        guessesLeft = 9;
+        myguesses  = "";
+    }
+    var winsGame= document.getElementById("winsGame");
+    winsGame.innerHTML = wins;
+    var lossesGame= document.getElementById("lossesGame");
+    lossesGame.innerHTML = losses;
+    var numberOfGuesses = document.getElementById("guessesleft");
+    numberOfGuesses.innerHTML = guessesLeft;
+    var showGuesses = document.getElementById("myguesses");
+    showGuesses.innerHTML = myguesses;
+}
+</script>
+</body>
+</html>
+</html>

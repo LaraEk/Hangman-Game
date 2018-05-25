@@ -20,3 +20,18 @@
 //  guess is a div
 
 </NOTES:>
+
+
+document.onkeypress = function(event) { // this is to make sure it picks up the key that is being pressed
+    // comp randomly picks a letter
+                    var computerGuess = alphabets[Math.floor(Math.random()* alphabets.length)];
+                    alert(computerGuess);
+                        // note: up to to this point, you and comp are both guessing. Now you need the comptuer guess to match yours
+                }   
+
+                if(userGuess == computerGuess)
+                {  // this is basically setting a reset if you win
+                    wins = wins +1;
+                    guessesLeft = 9
+                    myguesses = "";
+                }
