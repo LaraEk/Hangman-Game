@@ -27,16 +27,37 @@ $(document).ready(function() {
     // -----------------------------------------------------------
     // Here are the functions.
 
-// NOTE: THIS ONE WORKS -------------- NOTE: THIS ONE WORKS 
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS ONE WORKS 
 $("#elfbutton").on("click", function() {
+    $("#elftitle").show();
     $("#elfinfo").show();
+    $("#mentitle").hide();
     $("#meninfo").hide();
+    $("#ardatitle").hide();
     $("#ardainfo").hide();
   });
-// NOTE: THIS ONE WORKS -------------- NOTE: THIS ONE WORKS 
+
+  $("#menbutton").on("click", function() {
+    $("#elftitle").hide();
+    $("#elfinfo").hide();
+    $("#mentitle").show();
+    $("#meninfo").show();
+    $("#ardatitle").hide();
+    $("#ardainfo").hide();
+  });
+
+  $("#ardabutton").on("click", function() {
+    $("#elftitle").hide();
+    $("#elfinfo").hide();
+    $("#mentitle").hide();
+    $("#meninfo").hide();
+    $("#ardatitle").show();
+    $("#ardainfo").show();
+  });
+
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS ONE WORKS 
 
 
-    document.onkeypress = function(event) {
 
 //    var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
     var userGuess = event.key;
@@ -77,7 +98,7 @@ $("#elfbutton").on("click", function() {
     var numberOfGuesses = document.getElementById("guessesleft");
     numberOfGuesses.innerHTML = guessesLeft;
 
-}
+});
 
 
     // The End! \o/
