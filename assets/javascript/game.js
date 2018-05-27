@@ -18,13 +18,29 @@ $(document).ready(function() {
 
     var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-    var pickaword = 0;//something here;
-
     var wins = 0;
     var losses = 0;
-
+    var guessesLeft = 10;
+    var myguesses = "";
+    
     // ~:~:~:~
     // -----------------------------------------------------------
+    // Here are the functions.
+
+    document.onkeypress = function(event)
+{
+
+    var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
+    var userGuess = event.key;
+
+}
+
+
+    // The End! \o/
+    // ~:~:~:~
+    // -----------------------------------------------------------
+
+
     // Here are the functions.  We function well.
 
         // -- functions for choosing Elf/Men/Arda Words --    
@@ -69,6 +85,17 @@ $(document).ready(function() {
         console.log(result)
     }
 
+
+
+    if(guessesLeft == 0)
+    {
+        alert('You Lost! You are not a psychic!');
+        losses = losses + 1;
+        //resets
+        guessesLeft = 9;
+        myguesses  = "";
+    }
+ 
 
     // Here are some notes:
 
