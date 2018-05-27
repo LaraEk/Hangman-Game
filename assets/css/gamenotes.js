@@ -1,3 +1,88 @@
+
+    // -----------------------------------------------------------
+    // HERE ARE THE THINGS I NEED TO DO
+    
+    *** // when an array (Elf/Men/Ard) is selected, that array is chosen from
+
+    *** // A function for putting the right number of _s
+    
+    *** // A function (?) for when correct letter key is pressed, it appears in the correct _
+    
+    *** // When incorrect letter key is pressed, append to a list of incorrect keys
+        // -- and decrease the number of tries left
+
+    *** // When incorrect letter key is double-pressed, ignore because it has already been tried
+        // -- does this mean it's removed from initial array?
+    
+    *** // When word guessed fully correctly, "YOU WIN! Play again? [confirm box]"
+    *** // When word guesses run out of tries, "YOU LOSE! Play again? [confirm box]"
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+
+    // Here are the functions.  We function well.
+
+        // -- functions for choosing Elf/Men/Arda Words --    
+//    function chooseElfWord() {
+//       return elfWords[Math.floor(Math.random() * elfWords.length)];
+}
+
+//    function chooseMenWord() {
+//        return menWords[Math.floor(Math.random() * menWords.length)];
+    }
+
+//    function chooseArdaWord() {
+//        return ardaWords[Math.floor(Math.random() * ardaWords.length)];
+    }
+        // -- end choose word functions --
+
+ // let's put a for-loop in there.  everyone loves for-loops.
+ // does this function make sense?  I'm not sure!  No one knows~
+
+     // -----------------------------------------------------------    
+    // Here are the functions as they are called.  Make It So.
+
+    // add bit here with choosing the elfarray
+    
+//    function chooseElfWord() {
+//        console.log(result)
+}
+
+
+
+//    if(guessesLeft == 0)
+    {
+//        alert('You Lost! You are not a psychic!');
+//        losses = losses + 1;
+        //resets
+//        guessesLeft = 9;
+//        myguesses  = "";
+    }
+ 
+
+    // Here are some notes:
+
+    if
+    elseif
+    else
+
+
+//    while (something like x <10) {
+//        x++;
+    }
+
+//    wins++;
+//    losses++;
+
+
+
+// ------------------------------------------------------------------------------------
+
+
+
+
 $(document).ready(function() {
 
     // Here are the arrays of names.  NOTE: All lowercase so as to lessen confusion.
