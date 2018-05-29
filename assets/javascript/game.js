@@ -62,6 +62,7 @@ $(document).ready(function() {
 
     for(var i = 0; i < pickaword.length; i++){
         pickedword[i] = "_ ";
+        $("#wordispicked").html(pickedword);
     }
 
     console.log("console log this when this section works");
@@ -75,10 +76,18 @@ $(document).ready(function() {
 
         if (letters.includes(event.key)) {
             console.log("yeah it's a letter");
+            pickedword.forEach(myFunction);
+            function myFunction() {
+                if(i == userGuess) {
+                    i.innerHTML = userGuess;
+                }
+
+            }
             //  forEach("<div>" in pickedword){
     //            if ("<div>" = userGuess);
             $("#lettersguessed").append(userGuess);
             guessesLeft = guessesLeft - 1;
+            console.log(guessesLeft);
                 // exchange the _ with a letter
                 // increment guessesmade
                 // deinc guessesleft
@@ -101,25 +110,30 @@ $(document).ready(function() {
         {
             alert('You Lost! Insert Balrog Here!');
             losses = losses + 1;
+            guessesLeft = 10
         }    
 // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 
 
-    } //this is for onkeypress
+    } // @@@ this is for onkeypress @@@
 
 
 
 // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
     var winsGame= document.getElementById("winsdiv");
     winsGame.innerHTML = wins;
+
     var lossesGame= document.getElementById("lossesdiv");
     lossesGame.innerHTML = losses;
-    var numberOfGuesses = document.getElementById("guessesleft"); // guessesLeft = #guessesleft
-    numberOfGuesses.innerHTML = guessesLeft;
+    
+    var numberOfGuessesLeft = document.getElementById("guessesleft"); // guessesLeft = #guessesleft
+    numberOfGuessesLeft.innerHTML = guessesLeft;
+    
     var showGuesses = document.getElementById("lettersguessed"); // #lettersguessed = myguesses
     showGuesses.innerHTML = myguesses;
 // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
-    });
+
+    }); // @@@ this is for buttons on click elfbutton @@@
     
 
 });
