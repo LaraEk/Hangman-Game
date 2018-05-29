@@ -286,3 +286,21 @@ $(document).ready(function() {
 
 
  // check the jumbotron-name-caller (that ranjan uses in class) for removing items from an array!!!
+
+
+ if (letters.includes(userGuess)) {
+    console.log("yeah it's a letter");
+ //        forEach("<div>" in pickedword){
+//            if ("<div>" = userGuess);
+            // exchange the _ with a letter
+            // increment guessesmade
+            // deinc guessesleft
+            // incl guessed letter in MyGuesses
+//            elseif //not 
+            // do the things show it's wrong letter
+    }
+}
+else {
+    console.log("that ain't no letter");
+}
+

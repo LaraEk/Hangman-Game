@@ -1,4 +1,4 @@
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 $(document).ready(function() {
 
 $("#elfbutton").on("click", function() {
@@ -28,7 +28,7 @@ $("#elfbutton").on("click", function() {
     $("#ardainfo").show();
   });
 });
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 
 
 // -------------------------- NEXT SECTION ---------------------- //
@@ -66,27 +66,50 @@ $(document).ready(function() {
     console.log("console log this when this section works");
     console.log(pickedword);
 
+    if (letters.includes(userGuess)) {
+        console.log("yeah it's a letter");
+         //  forEach("<div>" in pickedword){
+//            if ("<div>" = userGuess);
+            // exchange the _ with a letter
+            // increment guessesmade
+            // deinc guessesleft
+            // incl guessed letter in MyGuesses}
+           
+//            elseif //not 
+            // do the things show it's wrong letter
+
+    }
+    else {
+        console.log("that ain't no letter");
+    }
 
 
 
 
 
 
-    
 
+
+
+
+
+
+
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
+    var winsGame= document.getElementById("winsdiv");
+    winsGame.innerHTML = wins;
+    var lossesGame= document.getElementById("lossesdiv");
+    lossesGame.innerHTML = losses;
+    myguesses = myguesses + "," + event.key;
+    var showGuesses = document.getElementById("numberofguesses");
+    showGuesses.innerHTML = myguesses;
+    var numberOfGuesses = document.getElementById("guessesleft");
+    numberOfGuesses.innerHTML = guessesLeft;
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
     });
     
 
 });
-
-
-
-
-
-
-
-
-
 
     // The End! \o/
     // ~:~:~:~
