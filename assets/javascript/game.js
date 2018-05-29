@@ -48,6 +48,7 @@ var myguesses = "";
 
 
 
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 $(document).ready(function() {
 
     console.log("please console log something god damn");
@@ -66,32 +67,45 @@ $(document).ready(function() {
     console.log("console log this when this section works");
     console.log(pickedword);
 
-    if (letters.includes(userGuess)) {
-        console.log("yeah it's a letter");
-         //  forEach("<div>" in pickedword){
-//            if ("<div>" = userGuess);
-            // exchange the _ with a letter
-            // increment guessesmade
-            // deinc guessesleft
-            // incl guessed letter in MyGuesses}
-           
-//            elseif //not 
-            // do the things show it's wrong letter
+    document.onkeypress = function(event)
+    {
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 
-    }
-    else {
-        console.log("that ain't no letter");
-    }
+        myguesses = myguesses + "," + event.key;
+
+        if (letters.includes(event.key)) {
+            console.log("yeah it's a letter");
+            //  forEach("<div>" in pickedword){
+    //            if ("<div>" = userGuess);
+            $("#lettersguessed").append(userGuess);
+            guessesLeft = guessesLeft - 1;
+                // exchange the _ with a letter
+                // increment guessesmade
+                // deinc guessesleft
+                // incl guessed letter in MyGuesses}
+            
+    //            elseif //not 
+                // do the things show it's wrong letter
+
+        }
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
+        else {
+            console.log("that ain't no letter");
+            alert("That is not, in fact, a letter.");
+        }
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 
 
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
+        if(guessesLeft == 0)
+        {
+            alert('You Lost! Insert Balrog Here!');
+            losses = losses + 1;
+        }    
+// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 
 
-
-
-
-
-
-
+    } //this is for onkeypress
 
 
 
@@ -100,11 +114,10 @@ $(document).ready(function() {
     winsGame.innerHTML = wins;
     var lossesGame= document.getElementById("lossesdiv");
     lossesGame.innerHTML = losses;
-    myguesses = myguesses + "," + event.key;
-    var showGuesses = document.getElementById("numberofguesses");
-    showGuesses.innerHTML = myguesses;
-    var numberOfGuesses = document.getElementById("guessesleft");
+    var numberOfGuesses = document.getElementById("guessesleft"); // guessesLeft = #guessesleft
     numberOfGuesses.innerHTML = guessesLeft;
+    var showGuesses = document.getElementById("lettersguessed"); // #lettersguessed = myguesses
+    showGuesses.innerHTML = myguesses;
 // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
     });
     
