@@ -1,3 +1,10 @@
+//  ----------------------------
+//  ----------------------------
+//  ----------------------------
+//  ------- THIS IS WHERE I'M PUTTING JS/JQ NOTES. 
+//  ----------------------------
+//  ----------------------------
+//  ----------------------------
 
     // -----------------------------------------------------------
     // HERE ARE THE THINGS I NEED TO DO
@@ -214,3 +221,53 @@ $(document).ready(function() {
 
   });
     // -----------------------------------------------------------
+
+    var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
+    var userGuess = event.key;
+//Fail condition
+// on UserGuess -> check myguesses -> If not in my guesses -> append myguesses with letter and deincrement
+
+    var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+
+   for (var i = 0; i < pickaword.length; i++){
+       pickaword[i] = "_ ";
+   }
+
+    if(userGuess == computerGuess)
+    {
+        wins = wins + 1; 
+        guessesLeft = 9;
+        myguesses  = myguesses.push(userGuess);
+    }
+    else
+    {
+        guessesLeft = guessesLeft - 1;
+    }
+    if(guessesLeft == 0)
+    {
+        alert('You Lost! You are not a psychic!');
+        losses = losses + 1;
+        guessesLeft = guessesLeft - 1;
+        myguesses  = "";
+    }
+
+
+    var winsGame= document.getElementById("winsdiv");
+    winsGame.innerHTML = wins;
+    var lossesGame= document.getElementById("lossesdiv");
+    lossesGame.innerHTML = losses;
+    myguesses = myguesses + "," + event.key;
+    var showGuesses = document.getElementById("numberofguesses");
+    showGuesses.innerHTML = myguesses;
+    var numberOfGuesses = document.getElementById("guessesleft");
+    numberOfGuesses.innerHTML = guessesLeft;
+
+
+}
+
+    // The End! \o/
+    // ~:~:~:~
+    // -----------------------------------------------------------
+
+
+ // check the jumbotron-name-caller (that ranjan uses in class) for removing items from an array!!!
