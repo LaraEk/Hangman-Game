@@ -46,23 +46,38 @@ var losses = 0;
 var guessesLeft = 10;
 var myguesses = "";
 
-var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
-var userGuess = event.key;
 
 
-$("#buttons").on("click", "elfbutton", function(event) {
+$(document).ready(function() {
 
-var pickedword = [];
+    console.log("please console log something god damn");
 
-for(var i = 0; i < pickaword.length; i++){
-    pickedword[i] = "_ ";
-    console.log()
-}
 
-});
+    $("#buttons").on("click", "#elfbutton", function(event) {
+
+        var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
+        var userGuess = event.key;
+        var pickedword = [];
+
+    for(var i = 0; i < pickaword.length; i++){
+        pickedword[i] = "_ ";
+    }
+
+    console.log("console log this when this section works");
+    console.log(pickedword);
+
+
+
+
+
+
+
     
 
+    });
+    
 
+});
 
 
 
