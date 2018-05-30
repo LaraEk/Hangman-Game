@@ -35,7 +35,9 @@ $("#elfbutton").on("click", function() {
 
 
 // NOTE: Here are the vars and the arrays of names.  NOTE: All lowercase so as to lessen confusion.
-var elfWords = ["galadriel","arwen","elendil","elbereth","legolas","glorfindel"];
+var elfWords = ["galadriel"]
+
+//"arwen","elendil","elbereth","legolas","glorfindel"];
 var menWords = ["aragorn","denethor","boromir","faramir","theoden","eowyn"];
 var ardaWords = ["eriador","moria","lothlorien","gondor","rohan","mordor"];
 
@@ -44,8 +46,15 @@ var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var myguesses = "";
+var myguesses;
 
+var userGuess = event.key;
+var pickedword;
+
+
+function result() {
+    var wordholder = document.getElementById("#wordispicked");
+}
 
 
 $(document).ready(function() {
@@ -56,8 +65,6 @@ $(document).ready(function() {
     $("#buttons").on("click", "#elfbutton", function(event) {
 
         var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
-        var userGuess = event.key;
-        var pickedword = [];
 
     for(var i = 0; i < pickaword.length; i++){
         pickedword[i] = "_ ";
@@ -65,6 +72,7 @@ $(document).ready(function() {
     }
 
     console.log("console log this when this section works");
+    console.log(pickaword);
     console.log(pickedword);
 
     document.onkeypress = function(event)
@@ -75,8 +83,10 @@ $(document).ready(function() {
 
         if (letters.includes(event.key)) {
             console.log("yeah it's a letter");
-            for(var z = 0; z <pickedword.length; z++) {
-                if (pickedword[z] === userGuess) {
+            for(var z = 0; z <pickaword.length; z++) {
+                if (pickaword[z] === userGuess) {
+
+                    pickedword.splice()
                     pickedword[z] = userGuess;
                     $("#lettersguessed").append(userGuess);
                     guessesLeft = guessesLeft - 1;
@@ -109,7 +119,8 @@ $(document).ready(function() {
             alert('You Lost! Insert Balrog Here!');
             losses = losses + 1;
             guessesLeft = 10
-        }    
+        }
+
 
 
 //    } // @@@ this used to be for onkeypress @@@
