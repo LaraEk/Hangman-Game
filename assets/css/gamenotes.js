@@ -304,3 +304,36 @@ else {
     console.log("that ain't no letter");
 }
 
+//----------------------------------------------------------------------------------------------------------------
+
+if (letters.includes(event.key)) {
+    console.log("yeah it's a letter");
+    pickedword.forEach(myFunction);
+    function myFunction() {
+        if(i == userGuess) {
+            $("wordispicked").html(i.innerHTML = userGuess;
+        }
+
+    }
+    //  forEach("<div>" in pickedword){
+//            if ("<div>" = userGuess);
+    $("#lettersguessed").append(userGuess);
+    guessesLeft = guessesLeft - 1;
+    console.log(guessesLeft);
+        // exchange the _ with a letter
+        // increment guessesmade
+        // deinc guessesleft
+        // incl guessed letter in MyGuesses}
+    
+//            elseif //not 
+        // do the things show it's wrong letter
+
+}
+
+//----------------------------------------------------------------------------------------------------------------
+for(var z = 0; z <pickedword.length; z++) {
+    if (pickedword[z] === userGuess) {
+    pickedword[z] = userGuess;
+    $("#lettersguessed").append(userGuess);
+    guessesLeft = guessesLeft - 1;
+    console.log(guessesLeft);}

@@ -48,10 +48,9 @@ var myguesses = "";
 
 
 
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 $(document).ready(function() {
 
-    console.log("please console log something god damn");
+    console.log("please console log something already");
 
 
     $("#buttons").on("click", "#elfbutton", function(event) {
@@ -69,57 +68,44 @@ $(document).ready(function() {
     console.log(pickedword);
 
     document.onkeypress = function(event)
-    {
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
+    { console.log(event.type);
 
         myguesses = myguesses + "," + event.key;
 
         if (letters.includes(event.key)) {
             console.log("yeah it's a letter");
-            pickedword.forEach(myFunction);
-            function myFunction() {
-                if(i == userGuess) {
-                    i.innerHTML = userGuess;
-                }
-
+            for(var z = 0; z <pickedword.length; z++) {
+                if (pickedword[z] === userGuess) {
+                pickedword[z] = userGuess;
+                $("#lettersguessed").append(userGuess);
+                guessesLeft = guessesLeft - 1;
+                console.log(guessesLeft);}            }                
             }
-            //  forEach("<div>" in pickedword){
-    //            if ("<div>" = userGuess);
-            $("#lettersguessed").append(userGuess);
-            guessesLeft = guessesLeft - 1;
-            console.log(guessesLeft);
-                // exchange the _ with a letter
-                // increment guessesmade
-                // deinc guessesleft
-                // incl guessed letter in MyGuesses}
-            
-    //            elseif //not 
-                // do the things show it's wrong letter
 
-        }
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
+                // THE CODE ABOVE IS SUPPOSED TO:
+                // exchange the _ with a letter
+                // incl guessed letter in MyGuesses
+                // deinc guessesleft (ONCE!)
+            
         else {
             console.log("that ain't no letter");
             alert("That is not, in fact, a letter.");
+            }
+        
         }
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 
-
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
         if(guessesLeft == 0)
         {
             alert('You Lost! Insert Balrog Here!');
             losses = losses + 1;
             guessesLeft = 10
         }    
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 
 
-    } // @@@ this is for onkeypress @@@
+//    } // @@@ this is for onkeypress @@@
 
 
 
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
     var winsGame= document.getElementById("winsdiv");
     winsGame.innerHTML = wins;
 
@@ -131,7 +117,6 @@ $(document).ready(function() {
     
     var showGuesses = document.getElementById("lettersguessed"); // #lettersguessed = myguesses
     showGuesses.innerHTML = myguesses;
-// NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS // NOTE: THIS SECTION WORKS -------------- NOTE: THIS SECTION WORKS 
 
     }); // @@@ this is for buttons on click elfbutton @@@
     
