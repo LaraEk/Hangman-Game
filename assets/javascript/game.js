@@ -43,19 +43,22 @@ var ardaWords = ["eriador","moria","lothlorien","gondor","rohan","mordor"];
 
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
+
+var pickedword;
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var myguesses;
+var myguesses = "";
 
-var userGuess = event.key;
-var pickedword;
+function lotrguess(){
+    var label, i;
+    var lotrwordcontainer = $("#lotrword");
 
+    for (i = 0; i < pickedword.length; i++) {
+        label = $('<label>').text('_').show();
+        lotrwordcontainer.append(label);
 
-function result() {
-    var wordholder = document.getElementById("#wordispicked");
 }
-
 
 $(document).ready(function() {
 
@@ -65,6 +68,8 @@ $(document).ready(function() {
     $("#buttons").on("click", "#elfbutton", function(event) {
 
         var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
+        var userGuess = event.key;
+        var pickedword = [];
 
     for(var i = 0; i < pickaword.length; i++){
         pickedword[i] = "_ ";
