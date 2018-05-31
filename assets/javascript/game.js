@@ -62,8 +62,8 @@ $(document).ready(function() {
 
     for(var i = 0; i < pickaword.length; i++){
         pickedword[i] = "_ ";
-        $("#wordispicked").html(pickedword);
     }
+    $("#wordispicked").html(pickedword.join(' '));
 
     console.log("console log this when this section works");
     console.log(pickedword);
