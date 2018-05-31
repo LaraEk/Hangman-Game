@@ -79,46 +79,47 @@ $(document).ready(function() {
             for(var z = 0; z <pickaword.length; z++) {
                 if (pickaword[z] === userGuess) {
                     pickedword[z] = userGuess;
-                    $("#lettersguessed").html(pickedword);
+                    $("#lettersguessed").html(myguesses);
                     guessesLeft = guessesLeft - 1;
                         //Need to update the HTML
                         $("#guessesleft").html(guessesLeft);
                         console.log(guessesLeft);
-                    
-                } // to the IF
+                } else {
+                    $("#lettersguessed").html(myguesses);
+                    alert("that letter was not in the word");
+                    console.log("nope");
+                    guessesLeft = guessesLeft - 1;
+                        $("#guessesleft").html(guessesLeft);
+                        console.log(guessesLeft);                   
+                } // to the Z PICKAWORD IF/ELSE
             } // to the FOR   
-//                else{                                                 // wtf why is this an Unexpected Token Else everything is in curly brackets
-//                    console.log("that letter was not in the word");
-//                    alert("nope");
-//                    $("#lettersguessed").append(userGuess);
-//                    guessesLeft = guessesLeft - 1;
-//                    console.log(guessesLeft);}            
-//                }              
-            } // to the IF letters.includes
-
-                // THE CODE ABOVE IS SUPPOSED TO:
-                // exchange the _ with a letter
-                // incl guessed letter in MyGuesses
-                // deinc guessesleft (ONCE!)
+        } else {
+                console.log("that ain't no letter");
+                alert("That is not, in fact, a letter.");
+                }
             
-        else {
-            console.log("that ain't no letter");
-            alert("That is not, in fact, a letter.");
+            
+
+
+            if(guessesLeft == 0)   // I guess this needs to be inside a function?  But it's not even deincrementing anymore,so
+            {
+                alert('You Lost! Insert Balrog Here!');
+                losses = losses + 1;
+                resetGame();
+            }    
+
+            if(pickedword.indexOf("_") === -1) {
+                wins = wins + 1;
+                alert('You Lost! Insert Balrog Here!');
+                resetGame();
             }
-        
+
+            function resetGame() {
+                guessesLeft = 10
+                myguesses = "";
+                alert("To start a new game, choose Elves, Men, or Arda.")
+            }
         }
-
-        if(guessesLeft == 0)   // I guess this needs to be inside a function?  But it's not even deincrementing anymore,so
-        {
-            alert('You Lost! Insert Balrog Here!');
-            losses = losses + 1;
-            guessesLeft = 10
-        }    
-
-
-//    } // @@@ this used to be for onkeypress @@@
-
-
 
     var winsGame= document.getElementById("winsdiv");
     winsGame.innerHTML = wins;
@@ -135,7 +136,7 @@ $(document).ready(function() {
     }); // @@@ this is for buttons on click elfbutton @@@
     
 
-});
+});  // @@@ this is for document ready function @@@
 
     // The End! \o/
     // ~:~:~:~

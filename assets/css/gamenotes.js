@@ -337,3 +337,26 @@ for(var z = 0; z <pickedword.length; z++) {
     $("#lettersguessed").append(userGuess);
     guessesLeft = guessesLeft - 1;
     console.log(guessesLeft);}
+
+//    ~:~:~:~:~::~:~:~:~:~
+
+
+    
+//                else{                                                 // wtf why is this an Unexpected Token Else everything is in curly brackets
+//                    console.log("that letter was not in the word");
+//                    alert("nope");
+//                    $("#lettersguessed").append(userGuess);
+//                    guessesLeft = guessesLeft - 1;
+//                    console.log(guessesLeft);}            
+//                }              
+//            } // to the IF letters.includes
+
+                // THE CODE ABOVE IS SUPPOSED TO:
+                // exchange the _ with a letter
+                // incl guessed letter in MyGuesses
+                // deinc guessesleft (ONCE!)
+            
+
+
+//    } // @@@ this used to be for onkeypress @@@
+
