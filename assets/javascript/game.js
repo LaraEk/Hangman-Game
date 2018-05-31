@@ -35,30 +35,18 @@ $("#elfbutton").on("click", function() {
 
 
 // NOTE: Here are the vars and the arrays of names.  NOTE: All lowercase so as to lessen confusion.
-var elfWords = ["galadriel"]
-
-//"arwen","elendil","elbereth","legolas","glorfindel"];
+var elfWords = ["galadriel","arwen","elendil","elbereth","legolas","glorfindel"];
 var menWords = ["aragorn","denethor","boromir","faramir","theoden","eowyn"];
 var ardaWords = ["eriador","moria","lothlorien","gondor","rohan","mordor"];
 
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-
-var pickedword;
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
 var myguesses = "";
 
-function lotrguess(){
-    var label, i;
-    var lotrwordcontainer = $("#lotrword");
 
-    for (i = 0; i < pickedword.length; i++) {
-        label = $('<label>').text('_').show();
-        lotrwordcontainer.append(label);
-
-}
 
 $(document).ready(function() {
 
@@ -77,7 +65,6 @@ $(document).ready(function() {
     }
 
     console.log("console log this when this section works");
-    console.log(pickaword);
     console.log(pickedword);
 
     document.onkeypress = function(event)
@@ -88,15 +75,13 @@ $(document).ready(function() {
 
         if (letters.includes(event.key)) {
             console.log("yeah it's a letter");
-            for(var z = 0; z <pickaword.length; z++) {
-                if (pickaword[z] === userGuess) {
-
-                    pickedword.splice()
+            for(var z = 0; z <pickedword.length; z++) {
+                if (pickedword[z] === userGuess) {
                     pickedword[z] = userGuess;
                     $("#lettersguessed").append(userGuess);
                     guessesLeft = guessesLeft - 1;
                     console.log(guessesLeft);
-                } // to the IF pickedword
+                } // to the IF
             } // to the FOR   
 //                else{                                                 // wtf why is this an Unexpected Token Else everything is in curly brackets
 //                    console.log("that letter was not in the word");
@@ -124,8 +109,7 @@ $(document).ready(function() {
             alert('You Lost! Insert Balrog Here!');
             losses = losses + 1;
             guessesLeft = 10
-        }
-
+        }    
 
 
 //    } // @@@ this used to be for onkeypress @@@
