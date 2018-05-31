@@ -19,7 +19,19 @@ body {
 /* this needs work! */
 }
 
+#wrapwinloss {
+    width:auto;
+}
 
+#winsdiv {
+    display: inline-block;
+    float:left;
+}
+
+#lossesdiv {
+    display: inline-block;
+    float:left;
+}
 
 #art {
     width: 90%;

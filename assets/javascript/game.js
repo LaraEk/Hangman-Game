@@ -56,6 +56,7 @@ $(document).ready(function() {
     $("#buttons").on("click", "#elfbutton", function(event) {
 
         var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
+        console.log(pickaword);
         var userGuess = event.key;
         var pickedword = [];
 
@@ -75,12 +76,15 @@ $(document).ready(function() {
 
         if (letters.includes(event.key)) {
             console.log("yeah it's a letter");
-            for(var z = 0; z <pickedword.length; z++) {
-                if (pickedword[z] === userGuess) {
+            for(var z = 0; z <pickaword.length; z++) {
+                if (pickaword[z] === userGuess) {
                     pickedword[z] = userGuess;
-                    $("#lettersguessed").append(userGuess);
+                    $("#lettersguessed").html(pickedword);
                     guessesLeft = guessesLeft - 1;
-                    console.log(guessesLeft);
+                        //Need to update the HTML
+                        $("#guessesleft").html(guessesLeft);
+                        console.log(guessesLeft);
+                    
                 } // to the IF
             } // to the FOR   
 //                else{                                                 // wtf why is this an Unexpected Token Else everything is in curly brackets
