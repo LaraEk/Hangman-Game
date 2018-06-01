@@ -57,7 +57,6 @@ $(document).ready(function() {
 
         var pickaword = elfWords[Math.floor(Math.random() * elfWords.length)];
         console.log(pickaword);
-        var userGuess = event.key;
         var pickedword = [];
 
     for(var i = 0; i < pickaword.length; i++){
@@ -70,28 +69,20 @@ $(document).ready(function() {
 
     document.onkeypress = function(event)
     { console.log(event.type);
-
+        var userGuess = event.key;
+         var found = false;
         myguesses = myguesses + "," + event.key;
-        alert(myguesses + ", and you guessed " + event.key); // WHY DOES THIS WORK AND THE OTHER ONE DOESN'T??!?!?!
+        //alert(myguesses + ", and you guessed " + event.key); // WHY DOES THIS WORK AND THE OTHER ONE DOESN'T??!?!?!
 
         if (letters.includes(event.key)) {
             console.log("yeah it's a letter");
             for(var z = 0; z <pickaword.length; z++) {
                 if (pickaword[z] === userGuess) {
+                    found = true;
                     pickedword[z] = userGuess;
-                    $("#lettersguessed").html(myguesses);
-                    guessesLeft = guessesLeft - 1;
-                        //Need to update the HTML
-                        $("#guessesleft").html(guessesLeft);
-                        console.log(guessesLeft);
-                } else {
-                    $("#lettersguessed").html(myguesses);
-                    alert("that letter was not in the word");
-                    console.log("nope");
-                    guessesLeft = guessesLeft - 1;
-                        $("#guessesleft").html(guessesLeft);
-                        console.log(guessesLeft);                   
-                } // to the Z PICKAWORD IF/ELSE
+                    document.querySelector("#wordispicked").innerHTML = pickedword.join(' ');
+
+                } 
             } // to the FOR   
         } else {
                 console.log("that ain't no letter");
@@ -100,21 +91,40 @@ $(document).ready(function() {
             
             
 
+               if(found == false)
+               {
+                    document.querySelector("#lettersguessed").innerHTML = myguesses;
+//                          $("#lettersguessed").html(myguesses);
+                    alert("that letter was not in the word");
+
+                    console.log(guessesLeft);
+                    console.log("nope");
+                    guessesLeft = guessesLeft - 1;
+                    document.querySelector("#guessesleft").innerHTML = guessesLeft;
+//                          $("#guessesleft").html(guessesLeft);
+                    console.log(guessesLeft);                   
+
+                } // to the Z PICKAWORD IF/ELSE
+
 
             if(guessesLeft == 0)   // I guess this needs to be inside a function?  But it's not even deincrementing anymore,so
             {
                 alert('You Lost! Insert Balrog Here!');
                 losses = losses + 1;
+                document.querySelector("#lossesdiv").innerHTML = losses;            
                 resetGame();
             }    
 
-            if(pickedword.indexOf("_") === -1) {
-                wins = wins + 1;
-                alert('You Lost! Insert Balrog Here!');
-                resetGame();
-            }
+            // if(pickedword.indexOf("_") === -1) {
+            //     wins = wins + 1;
+            //     document.querySelector("#winsdiv").innerHTML = wins;            
+            //     alert('You Lost! Insert Balrog Here!');
+            //     resetGame();
+            // }
 
             function resetGame() {
+                document.querySelector("#winsdiv").innerHTML = wins;
+                document.querySelector("#lossesdiv").innerHTML = losses;            
                 guessesLeft = 10
                 myguesses = "";
                 alert("To start a new game, choose Elves, Men, or Arda.")
